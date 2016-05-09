@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Soiree list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Descriptif</th>
+                <th>Photo</th>
+                <th>Dateinvitation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for soiree in soirees %}
+            <tr>
+                <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.id }}</a></td>
+                <td>{{ soiree.nom }}</td>
+                <td>{{ soiree.descriptif }}</td>
+                <td>{{ soiree.photo }}</td>
+                <td>{% if soiree.dateInvitation %}{{ soiree.dateInvitation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('soiree_show', { 'id': soiree.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('soiree_edit', { 'id': soiree.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('soiree_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

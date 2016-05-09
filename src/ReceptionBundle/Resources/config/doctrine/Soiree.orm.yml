@@ -1,0 +1,23 @@
+ReceptionBundle\Entity\Soiree:
+    type: entity
+    table: null
+    repositoryClass: ReceptionBundle\Repository\SoireeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        descriptif:
+            type: string
+            length: 255
+        photo:
+            type: string
+            length: 255
+        dateInvitation:
+            type: datetime
+    lifecycleCallbacks: {  }
