@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Soiree list</h1>
+    <h1>Liste des menus :</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Id</th>
+                <!-- <th>Id</th> -->
                 <th>Nom</th>
                 <th>Descriptif</th>
                 <th>Photo</th>
@@ -17,10 +17,10 @@
         <tbody>
         {% for soiree in soirees %}
             <tr>
-                <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.id }}</a></td>
-                <td>{{ soiree.nom }}</td>
+                <!-- <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.id }}</a></td> -->
+                <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.nom }}</a></td>
                 <td>{{ soiree.descriptif }}</td>
-                <td>{{ soiree.photo }}</td>
+                <td><img src="{{ soiree.photo }}" /></td>
                 <td>{% if soiree.dateInvitation %}{{ soiree.dateInvitation|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
@@ -40,6 +40,10 @@
     <ul>
         <li>
             <a href="{{ path('soiree_new') }}">Create a new entry</a>
+        </li>
+
+        <li>
+        <li><a href="{{ path("homepage") }}" title="Télécharger">Accueil</a></li>
         </li>
     </ul>
 {% endblock %}
