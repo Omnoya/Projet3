@@ -20,4 +20,5 @@ ReceptionBundle\Entity\Soiree:
             length: 255
         dateInvitation:
             type: datetime
-    lifecycleCallbacks: {  }
+
+    
