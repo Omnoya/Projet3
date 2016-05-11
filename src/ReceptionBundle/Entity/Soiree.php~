@@ -136,49 +136,4 @@ class Soiree
     {
         return $this->dateInvitation;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $soiree;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->soiree = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add soiree
-     *
-     * @param \UserBundle\Entity\User $soiree
-     * @return Soiree
-     */
-    public function addSoiree(\UserBundle\Entity\User $soiree)
-    {
-        $this->soiree[] = $soiree;
-
-        return $this;
-    }
-
-    /**
-     * Remove soiree
-     *
-     * @param \UserBundle\Entity\User $soiree
-     */
-    public function removeSoiree(\UserBundle\Entity\User $soiree)
-    {
-        $this->soiree->removeElement($soiree);
-    }
-
-    /**
-     * Get soiree
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSoiree()
-    {
-        return $this->soiree;
-    }
 }
