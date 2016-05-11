@@ -24,9 +24,6 @@ class SoireeController extends Controller
 
         $soirees = $em->getRepository('ReceptionBundle:Soiree')->findAll();
 
-        foreach ($soirees as $soiree){
-            $plop = $soiree;
-        }
         return $this->render('ReceptionBundle:soiree:index.html.twig', array(
             'soirees' => $soirees,
         ));

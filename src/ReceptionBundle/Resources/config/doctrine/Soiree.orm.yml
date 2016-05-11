@@ -21,4 +21,15 @@ ReceptionBundle\Entity\Soiree:
         dateInvitation:
             type: datetime
 
-    
+    manyToMany:
+        soiree:
+            targetEntity: UserBundle\Entity\User
+            inversedBy: user
+            joinTable:
+                name: participation_users
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    soiree_id:
+                        referencedColumnName: id
