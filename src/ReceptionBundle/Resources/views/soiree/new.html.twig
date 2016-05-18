@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Créer un Plat</h1>
+    <h1 class="titre">Créer un Plat</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
@@ -9,8 +9,10 @@
     {{ form_end(form) }}
 
     <ul>
-        <li>
-            <a href="{{ path('soiree_index') }}">Back to the list</a>
-        </li>
+        <form>
+            <a href="{{ path('soiree_index') }}">
+                <input id="button" type="button" value="Back to the list";">
+            </a>
+        </form>
     </ul>
 {% endblock %}
