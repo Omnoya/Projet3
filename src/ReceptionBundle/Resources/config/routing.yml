@@ -1,7 +1,8 @@
-reception_soiree:
-    resource: "@ReceptionBundle/Resources/config/routing/soiree.yml"
-    prefix:   /soiree
+#reception_soiree:
+    #resource: "@ReceptionBundle/Resources/config/routing/soiree.yml"
+    #prefix:   /soiree
 
 reception_homepage:
     path:     /
-    defaults: { _controller: ReceptionBundle:Default:index }
+    defaults: { _controller: ReceptionBundle:Soiree:index }
+
