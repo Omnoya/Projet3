@@ -1,3 +1,48 @@
+
 .titre {
     text-align: center;
+    margin-bottom: 50px;
+}
+
+.navbar ul {
+    text-align: right;
+    list-style: none;
+}
+
+#imagecaro {
+    margin-left: 25%;
+    margin-bottom: 15px;
+}
+
+body {
+    background-color: lightslategrey;
+}
+
+.category {
+    margin-left: 20px;
+}
+
+.list {
+    text-align: center;
+}
+
+.nom {
+    margin-left: 20px;
+}
+
+
+#descript {
+    margin-left: 20px;
+}
+
+#photo {
+    margin-right: 20px;
+}
+
+#action {
+    text-align: center;
+}
+
+#button {
+    margin-left: 42%;
 }

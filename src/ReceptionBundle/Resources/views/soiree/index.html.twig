@@ -3,10 +3,10 @@
 {% block body %}
 <div class="navbar">
     <ul>
-        <li>se connecter</li>
+        <li><a href="{{ path('fos_user_security_login') }}">se connecter</li>
     </ul>
 </div>
-
+<div>
     <h1 class="titre">La Cuisine de Caro</h1>
     <img id="imagecaro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}">
     <h1 class="list">Liste des menus :</h1>
@@ -44,7 +44,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     <ul>
         <form>
             <a href="{{ path('soiree_new') }}">
