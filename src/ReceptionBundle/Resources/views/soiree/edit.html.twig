@@ -9,9 +9,11 @@
     {{ form_end(edit_form) }}
 
     <ul>
-        <li>
-            <a href="{{ path('soiree_index') }}">Back to the list</a>
-        </li>
+        <form>
+            <a href="{{ path('soiree_new') }}">
+                <input id="button" type="button" value="Back to the list">
+            </a>
+        </form>
         <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">

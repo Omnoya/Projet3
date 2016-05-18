@@ -1,8 +1,12 @@
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /user
 
 reception:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /reception
+
+home:
     resource: "@ReceptionBundle/Resources/config/routing.yml"
     prefix:   /
 

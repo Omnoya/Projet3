@@ -1,10 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des menus :</h1>
+<div class="navbar">
+    <ul>
+        <li>se connecter</li>
+    </ul>
+</div>
+
+    <h1 class="titre">La Cuisine de Caro</h1>
+    <img id="imagecaro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}">
+    <h1 class="list">Liste des menus :</h1>
 
     <table>
-        <thead>
+        <thead class="category">
             <tr>
                 <!-- <th>Id</th> -->
                 <th>Nom</th>
@@ -38,12 +46,11 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('soiree_new') }}">Create a new entry</a>
-        </li>
+        <form>
+            <a href="{{ path('soiree_new') }}">
+            <input id="button" type="button" value="Create new entry";">
+            </a>
+        </form>
 
-        <li>
-        <li><a href="{{ path("homepage") }}" title="Télécharger">Accueil</a></li>
-        </li>
     </ul>
 {% endblock %}
