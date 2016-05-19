@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<<<<<<< HEAD
+<div class="container">
+    <h1 class="menus">Liste des menus</h1>
 <div class="navigation">
-        <a href="{{ path("fos_user_registration_register") }}">S'enregistrer</a>&nbsp;<a href="">Se connecter</a>
+        <a href="{{ path("fos_user_registration_register") }}">S'enregistrer</a>&nbsp;<a href="{{ path("fos_user_security_login") }}">Se connecter</a>
 </div>
 
 <div class="container-fluid">
     <h1 class="titre">La Cuisine de Caro</h1>
     <img id="imagecaro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}"/>
     <h1 class="list">Liste des Menus :</h1>
-
-
 
     <table>
         <thead class="category">
@@ -20,7 +20,7 @@
                 <th>Nom</th>
                 <th>Descriptif</th>
                 <th>Photo</th>
-                <th>Date  Invitation</th>
+                <th>Date Invitation</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -42,7 +42,7 @@
                     </ul>
                     {% endif %}
                     {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-                        tu n'editera pas mes menus
+                        tu n'editeras pas mes menus
                     {% endif %}
                 </td>
             </tr>
@@ -63,5 +63,4 @@
     </ul>
 </div>
 {% endif %}
-
 {% endblock %}
