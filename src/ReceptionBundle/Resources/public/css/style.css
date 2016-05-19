@@ -1,5 +1,5 @@
 body{
-    background: skyblue;
+    background: lightblue;
 }
 
 a {
@@ -112,10 +112,6 @@ td {
     margin-bottom: 15px;
 }
 
-body {
-    background-color: lightslategrey;
-}
-
 .category {
     margin-left: 20px;
 }
@@ -139,9 +135,6 @@ h1{
     text-align: center;
 }
 
-a {
-    text-decoration:none;
-}
 a:hover {
     text-decoration:none;
 }
