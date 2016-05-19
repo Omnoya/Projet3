@@ -1,10 +1,21 @@
-body{
-    background: lightblue;
+body {
+    background-color: #F7F2B2;
+    color: #000000;
 }
-
+h1{
+    font-size:20px;
+}
 a {
-    text-decoration:none;
+    text-decoration: none;
+    color: #F7F2B2;
+    font-weight:lighter;
 }
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+
 a:hover {
     text-decoration:none;
 }
@@ -100,8 +111,15 @@ td {
 .titre {
     text-align: center;
     margin-bottom: 50px;
+    font-size: 40px;
+    font-family: "URW Gothic L", serif;
+    text-transform: uppercase;
 }
 
+
+img {
+    margin: auto;
+}
 .navbar ul {
     text-align: right;
     list-style: none;;
@@ -110,6 +128,9 @@ td {
 #imagecaro {
     margin-left: 25%;
     margin-bottom: 15px;
+    max-width: 100%;
+    height:auto;
+    display:block;
 }
 
 .category {
@@ -125,12 +146,6 @@ td {
     margin-left: 42%;
 }
 
-
-
-h1{
-    font-size:20px;
-}
-
 .titre {
     text-align: center;
 }
@@ -139,5 +154,14 @@ a:hover {
     text-decoration:none;
 }
 a:visited {
-    text-decoration:none;
+    text-decoration: none;
+}
+.navigation {
+    background-color: #000000;
+    padding:4px;
+    text-transform: uppercase;
+    font-family: "URW Gothic L",serif;
+    font-size: 16px;
+    vertical-align:center;
+    text-align:center;
 }
