@@ -1,11 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<<<<<<< HEAD
 <div class="container">
     <h1 class="menus">Liste des menus</h1>
+=======
+
+<div class="navbar">
+    <ul>
+        <a href="{{ path("fos_user_registration_register") }}">S'inscrire</a></li>
+    </ul>
+</div>
+
+<div class="navbar">
+    <ul>
+        <a href="{{ path("fos_user_security_login") }}">Se connecter</a></li>
+    </ul>
+</div>
+
+
+    <h1 class="titre">La Cuisine de Caro</h1>
+    <img id="imagecaro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}"/>
+    <h1 class="list">Liste des Menus :</h1>
+
+
+>>>>>>> c3d75d4c0c146f45a70900645b071906a4dd0db2
 
     <table>
-        <thead>
+        <thead class="category">
             <tr>
                 <!-- <th>Id</th> -->
                 <th>Nom</th>
@@ -16,32 +38,41 @@
             </tr>
         </thead>
         <tbody>
+
         {% for soiree in soirees %}
             <tr>
-                <!-- <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.id }}</a></td> -->
+                {#<td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.id }}</a></td>#}
                 <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.nom }}</a></td>
                 <td>{{ soiree.descriptif }}</td>
                 <td><img src="{{ soiree.photo }}" /></td>
                 <td>{% if soiree.dateInvitation %}{{ soiree.dateInvitation|date('d-m-Y H:i:s') }}{% endif %}</td>
                 <td>
-
-                            <a href="{{ path('soiree_show', { 'id': soiree.id }) }}" class="afficher">Afficher</a>
-
-                            <a href="{{ path('soiree_edit', { 'id': soiree.id }) }}" class="modifier">Modifier</a>
-
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('soiree_edit', { 'id': soiree.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                    {% endif %}
+                    {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                        tu n'editeras pas mes menus
+                    {% endif %}
                 </td>
             </tr>
         {% endfor %}
+
         </tbody>
     </table>
 
-        <div class="row">
-            <div class="col-xs-12 col-lg-6">
-                <a href="{{ path('soiree_new') }}" class="nouveauplat">Ajouter un nouveau plat</a>
-            </div>
-            <div class="col-xs-12 col-lg-6">
-                <a href="{{ path("homepage") }}" title="Retour à l'accueil" class="accueil">Accueil</a>
-            </div>
-        </div>
-</div>
+{% if is_granted('ROLE_SUPER_ADMIN') %}
+
+    <ul>
+        <form>
+            <a href="{{ path('soiree_new') }}">
+            <input id="button" type="button" value="Ajouter un nouveau plat">
+
+            </a>
+        </form>
+    </ul>
+{% endif %}
 {% endblock %}

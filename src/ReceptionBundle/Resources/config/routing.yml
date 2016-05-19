@@ -4,4 +4,4 @@ reception_soiree:
 
 reception_homepage:
     path:     /
-    defaults: { _controller: ReceptionBundle:Default:index }
+    defaults: { _controller: ReceptionBundle:Soiree:index }

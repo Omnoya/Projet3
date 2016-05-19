@@ -96,3 +96,55 @@ td {
 .row {
     margin-top: 20px;
 }
+
+.titre {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.navbar ul {
+    text-align: right;
+    list-style: none;;
+}
+
+#imagecaro {
+    margin-left: 25%;
+    margin-bottom: 15px;
+}
+
+body {
+    background-color: lightslategrey;
+}
+
+.category {
+    margin-left: 20px;
+}
+
+.list {
+    text-align: center;
+}
+
+
+#button {
+    margin-left: 42%;
+}
+
+
+
+h1{
+    font-size:20px;
+}
+
+.titre {
+    text-align: center;
+}
+
+a {
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:none;
+}
+a:visited {
+    text-decoration:none;
+}
