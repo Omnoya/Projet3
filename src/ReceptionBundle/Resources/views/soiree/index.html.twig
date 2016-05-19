@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="navbar">
-        <ul>
-            <li><a href="{{ path('fos_user_security_login') }}">se connecter</a></li>
-        </ul>
-    </div>
-<div>
+
+<div class="navbar">
+    <ul>
+        <a href="{{ path("fos_user_registration_register") }}">Se connecter</a></li>
+    </ul>
+</div>
+
+
     <h1 class="titre">La Cuisine de Caro</h1>
     <img id="imagecaro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}"/>
     <h1 class="list">Liste des Menus :</h1>
@@ -25,31 +27,42 @@
             </tr>
         </thead>
         <tbody>
+
         {% for soiree in soirees %}
             <tr>
-                <!-- <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.id }}</a></td> -->
+                {#<td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.id }}</a></td>#}
                 <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.nom }}</a></td>
                 <td>{{ soiree.descriptif }}</td>
                 <td><img src="{{ soiree.photo }}" /></td>
                 <td>{% if soiree.dateInvitation %}{{ soiree.dateInvitation|date('d-m-Y H:i:s') }}{% endif %}</td>
                 <td>
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <ul>
                         <li>
                             <a href="{{ path('soiree_edit', { 'id': soiree.id }) }}">Modifier</a>
                         </li>
                     </ul>
+                    {% endif %}
+                    {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                        tu n'editera pas mes menus
+                    {% endif %}
                 </td>
             </tr>
         {% endfor %}
+
         </tbody>
     </table>
-</div>
+
+{% if is_granted('ROLE_SUPER_ADMIN') %}
+
     <ul>
         <form>
             <a href="{{ path('soiree_new') }}">
             <input id="button" type="button" value="Ajouter un nouveau plat">
+
             </a>
         </form>
-
     </ul>
+{% endif %}
+
 {% endblock %}

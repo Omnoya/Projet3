@@ -4,3 +4,11 @@ home:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+#user:
+    #resource: "@UserBundle/Resources/config/routing.yml"
+    #prefix:   /
+
+#reception:
+    #resource: "@UserBundle/Resources/config/routing.yml"
+    #prefix:   /
