@@ -1,22 +1,36 @@
-
+body {
+    background-color: #F7F2B2;
+    color: #000000;
+}
+h1{
+    font-size:20px;
+}
+a {
+    text-decoration: none;
+    color: #F7F2B2;
+    font-weight:lighter;
+}
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
 
 .titre {
     text-align: center;
     margin-bottom: 50px;
+    font-size: 40px;
+    font-family: "URW Gothic L", serif;
+    text-transform: uppercase;
 }
 
-.navbar ul {
-    text-align: right;
-    list-style: none;
-}
-
-#imagecaro {
-    margin-left: 25%;
+img {
+    margin:auto;
     margin-bottom: 15px;
-}
-
-body {
-    background-color: lightslategrey;
+    max-width: 100%;
+    height:auto;
+    display:block;
 }
 
 .category {
@@ -48,23 +62,17 @@ body {
     margin-left: 42%;
 }
 
-
-
-h1{
-    font-size:20px;
-}
-
 .titre {
     text-align: center;
 }
 
-a {
-    text-decoration:none;
-}
-a:hover {
-    text-decoration:none;
-}
-a:visited {
-    text-decoration:none;
+.navigation {
+    background-color: #000000;
+    padding:4px;
+    text-transform: uppercase;
+    font-family: "URW Gothic L",serif;
+    font-size: 16px;
+    vertical-align:center;
+    text-align:center;
 }
 

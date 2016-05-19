@@ -2,13 +2,11 @@
 
 {% block body %}
 
-<div class="navbar">
-    <ul>
-        <a href="{{ path("fos_user_registration_register") }}">Se connecter</a></li>
-    </ul>
+<div class="navigation">
+        <a href="{{ path("fos_user_registration_register") }}">S'enregistrer</a>&nbsp;<a href="">Se connecter</a>
 </div>
 
-
+<div class="container-fluid">
     <h1 class="titre">La Cuisine de Caro</h1>
     <img id="imagecaro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}"/>
     <h1 class="list">Liste des Menus :</h1>
@@ -63,6 +61,7 @@
             </a>
         </form>
     </ul>
+</div>
 {% endif %}
 
 {% endblock %}
