@@ -23,9 +23,11 @@ class SoireeController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $soirees = $em->getRepository('ReceptionBundle:Soiree')->findAll();
-
+        $users = $em->getRepository('UserBundle:User')->findAll();
+        
         return $this->render('ReceptionBundle:soiree:index.html.twig', array(
             'soirees' => $soirees,
+            'users' => $users,
         ));
     }
 

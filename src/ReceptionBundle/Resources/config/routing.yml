@@ -1,6 +1,6 @@
-#reception_soiree:
-    #resource: "@ReceptionBundle/Resources/config/routing/soiree.yml"
-    #prefix:   /soiree
+reception_soiree:
+    resource: "@ReceptionBundle/Resources/config/routing/soiree.yml"
+    prefix:   /soiree
 
 reception_homepage:
     path:     /
