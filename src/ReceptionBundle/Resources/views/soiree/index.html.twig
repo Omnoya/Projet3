@@ -1,15 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
 <div class="navbar">
     <ul>
         <a href="{{ path("fos_user_registration_register") }}">Se connecter</a></li>
     </ul>
 </div>
 
+
     <h1 class="titre">La Cuisine de Caro</h1>
-    <img id="imagecaro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}">
-    <h1 class="list">Liste des menus :</h1>
+    <img id="imagecaro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}"/>
+    <h1 class="list">Liste des Menus :</h1>
+
+
 
     <table>
         <thead class="category">
@@ -18,7 +22,7 @@
                 <th>Nom</th>
                 <th>Descriptif</th>
                 <th>Photo</th>
-                <th>Dateinvitation</th>
+                <th>Date  Invitation</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -30,15 +34,15 @@
                 <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.nom }}</a></td>
                 <td>{{ soiree.descriptif }}</td>
                 <td><img src="{{ soiree.photo }}" /></td>
-                <td>{% if soiree.dateInvitation %}{{ soiree.dateInvitation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if soiree.dateInvitation %}{{ soiree.dateInvitation|date('d-m-Y H:i:s') }}{% endif %}</td>
                 <td>
                     {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <ul>
                         <li>
-                            <a href="{{ path('soiree_show', { 'id': soiree.id }) }}">show</a>
+                            <a href="{{ path('soiree_show', { 'id': soiree.id }) }}">Afficher</a>
                         </li>
                         <li>
-                            <a href="{{ path('soiree_edit', { 'id': soiree.id }) }}">edit</a>
+                            <a href="{{ path('soiree_edit', { 'id': soiree.id }) }}">Modifier</a>
                         </li>
                     </ul>
                     {% endif %}
@@ -51,13 +55,17 @@
 
         </tbody>
     </table>
+
 {% if is_granted('ROLE_SUPER_ADMIN') %}
+
     <ul>
         <form>
             <a href="{{ path('soiree_new') }}">
-            <input id="button" type="button" value="Create new entry">
+            <input id="button" type="button" value="Ajouter un nouveau plat">
+
             </a>
         </form>
-{% endif %}
     </ul>
+{% endif %}
+
 {% endblock %}

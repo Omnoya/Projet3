@@ -1,3 +1,5 @@
+
+
 .titre {
     text-align: center;
     margin-bottom: 50px;
@@ -44,5 +46,25 @@ body {
 
 #button {
     margin-left: 42%;
+}
+
+
+
+h1{
+    font-size:20px;
+}
+
+.titre {
+    text-align: center;
+}
+
+a {
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:none;
+}
+a:visited {
+    text-decoration:none;
 }
 
