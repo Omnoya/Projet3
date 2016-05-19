@@ -1,0 +1,98 @@
+body{
+    background: skyblue;
+}
+
+a {
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:none;
+}
+img {
+    width:200px;
+}
+
+#soiree_nom
+{
+    background:blue;
+}
+
+table{
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+th {
+    padding: 4px;
+    text-align:center;
+    font-family: "Liberation Sans", serif;
+    text-transform:uppercase;
+    background: #FFFFFF;
+
+}
+
+td {
+    padding: 4px;
+    text-align:center;
+    font-family: "Liberation Sans", serif;
+    font-size:14px;
+    background: #f6f6f6;
+}
+
+
+.menus {
+    text-align:center;
+    font-family: Open Sans, sans-serif;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+.nouveauplat {
+    background-color: #003366;
+    padding:10px;
+    text-transform:uppercase;
+    text-align:center;
+    font-family: Open Sans, sans-serif;
+    letter-spacing:2px;
+    width: 100%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    margin-bottom:5px;
+}
+.nouveauplat:hover {
+    color: #003366;
+    padding:10px;
+    text-transform:uppercase;
+    text-align:center;
+    font-family: Open Sans, sans-serif;
+    letter-spacing:2px;
+    background-color: #FFFFFF;
+    text-decoration:none;
+    border: 1px solid #003366;
+    -webkit-transition: color ease 2s;
+    -moz-transition: color ease 2s;
+    -o-transition: color ease 2s;
+    transition: color ease 2s;
+
+
+}
+.accueil {
+    background-color: #006699;
+    padding:10px;
+    text-transform:uppercase;
+    text-align:center;
+    font-family: Open Sans, sans-serif;
+    letter-spacing:2px;
+    width:100%;
+}
+.modifier {
+    text-transform:uppercase;
+}
+
+.afficher {
+    text-transform:uppercase;
+}
+.row {
+    margin-top: 20px;
+}
