@@ -1,0 +1,183 @@
+/* -- Genéral -- couleur de fond */
+
+body {
+	background: #fff;
+	font-size: 16px;
+}
+
+/* Header
+----------------------------------- */
+
+.navbar{
+	border-radius: 0;
+	margin: 0 0 10px 0;
+	
+}
+
+.navbar-default{
+	background: #fff;
+	border-color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a{
+	font-weight: 600;
+	color: #000;
+	padding: 20px 0 5px 0;
+	margin-right: 36px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus{
+	color:#000;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+	background: #fff;
+	color: #000;
+}
+
+@media (max-width: 767px){
+
+	.nav > li > a{
+		display: inline-block;
+	}
+
+	.navbar-default .navbar-nav > li > a{
+		padding: 10px 0 5px 0;
+	}
+}
+
+/*
+header{
+	background: #fff;
+}
+
+.container-fluid{
+	margin: 0;
+	padding: 0;
+}
+
+#barre-recherche{
+	padding-top: 20px;
+}
+
+.row{
+	//margin: 0;
+	//padding: 0;
+}
+*/
+
+/* -- Logo -- */
+/*
+#logo{
+	text-align: center;
+	font-size: 1.5em;
+	color: #000;
+
+	padding-top: 10px;
+}
+
+#logo img{
+	padding-left: 3px;
+}
+*/
+
+/* Gestion de la grille bootstrap -logo- -barre de recherche- menu- */
+/*
+header .col-md-3{
+	background: #fff;
+	padding: 0;
+}
+
+header .col-md-9{
+	background: #fff;
+	padding-top: 18px;
+}
+
+.navbar{
+	border-radius: 0;
+	margin: 0 0 10px 0;
+	
+}
+
+.navbar-collapse{
+	padding-left: 0;
+}
+
+.navbar-default .navbar-nav > li > a{
+	font-weight: 600;
+	color: #000;
+	padding: 20px 0 5px 0;
+	margin-left: 36px;
+}
+
+.navbar-default{
+	background: #fff;
+	border-color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+	color: #000;
+}
+
+.navbar-form{
+	margin-left: 40px;
+}
+
+.navbar-header{
+	display: none;
+}
+*/
+/* media queries
+----------------------------- */
+/*
+@media (max-width: 1220px){
+
+	.navbar-default .navbar-nav > li > a{
+		font-size: 92%;
+		margin-left: 20px;
+	}
+
+	.col-md-3 img{
+		width: 80%;
+	}
+
+}
+
+@media (max-width: 1200px){
+
+	.form-group{
+		padding-left: 20px;
+	}
+}
+
+@media (max-width: 991px){
+
+	#barre-recherche{
+		display: none;
+	}
+
+}
+
+@media (max-width: 767px){
+
+	header #logo{
+		display: none;
+	}
+
+	.nav > li > a{
+		display: inline-block;
+	}
+
+	.navbar-header{
+		display: block;
+	}
+
+	.navbar-toggle{
+		margin-top: 20px;
+	}
+	
+}
+*/

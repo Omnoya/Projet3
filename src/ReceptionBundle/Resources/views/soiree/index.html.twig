@@ -10,8 +10,11 @@
     <h1 class="titre">La Cuisine de Caro</h1>
     <img id="imagecaro" src="{{ asset('/bundles/reception/images/PROJET3.png') }}"/>
     <h1 class="list">Liste des Menus :</h1>
-    <table>
-        <thead class="category">
+
+
+    <div id="conteneur-tableau">
+        <table class="css-tableaux">
+
             <tr>
                 <!-- <th>Id</th> -->
                 <th>Nom</th>
@@ -20,33 +23,29 @@
                 <th>Date Invitation</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
 
-        {% for soiree in soirees %}
+            {% for soiree in soirees %}
             <tr>
                 {#<td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.id }}</a></td>#}
                 <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.nom }}</a></td>
                 <td>{{ soiree.descriptif }}</td>
                 <td><img src="{{ soiree.photo }}" /></td>
                 <td>{% if soiree.dateInvitation %}{{ soiree.dateInvitation|date('d-m-Y H:i:s') }}{% endif %}</td>
-                <td>
-                    {% if is_granted('ROLE_SUPER_ADMIN') %}
-                    <ul>
-                        <li>
-                            <a href="{{ path('soiree_edit', { 'id': soiree.id }) }}">Modifier</a>
-                        </li>
-                    </ul>
-                    {% endif %}
-                    {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-                        tu n'editeras pas mes menus
-                    {% endif %}
-                </td>
-            </tr>
-        {% endfor %}
 
-        </tbody>
-    </table>
+                <td>{% if is_granted('ROLE_SUPER_ADMIN') %}<a href="{{ path('soiree_edit', { 'id': soiree.id }) }}">Modifier</a>{% endif %}</td>
+
+            </tr>
+
+                    {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+
+                        <p>tu n'editeras pas mes menus</p>
+
+                    {% endif %}
+
+            {% endfor %}
+
+        </table>
+    </div>
 
 {% if is_granted('ROLE_SUPER_ADMIN') %}
 
