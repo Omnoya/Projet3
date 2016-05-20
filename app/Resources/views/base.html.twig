@@ -18,7 +18,10 @@
         <link rel="icon" type="image/x-icon" href="{{asset('favicon.ico')}}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
+
+    {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
