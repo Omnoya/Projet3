@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
+
 <div class="container">
 
 
@@ -28,11 +30,11 @@
 
             </tr>
 
-                    {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+            {# {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
 
                         <p>tu n'editeras pas mes menus</p>
 
-                    {% endif %}
+                    {% endif %} #}
 
             {% endfor %}
 

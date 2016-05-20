@@ -1,76 +1,144 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="welcome">
-                <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
+
+    <!-- slider -->
+
+    <div style="min-height: 50px;">
+        <!-- Jssor Slider Begin -->
+        <!-- To move inline styles to css file/block, please specify a class name for each element. -->
+        <!-- ================================================== -->
+        <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+            <!-- Loading Screen -->
+            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+                <div style="position: absolute; display: block; background: url("{{ asset('bundles/reception/images/loading.gif') }}") no-repeat center center;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
             </div>
-
-            <div id="status">
-                <p>
-                    <svg id="icon-status" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" fill="#759E1A"/></svg>
-
-                    Your application is now ready. You can start working on it at:
-                    <code>{{ base_dir }}/</code>
-                </p>
+        </div>
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
+            <div>
+                <img u="image" src2="{{ asset('bundles/reception/images/repas.jpg') }}" />
             </div>
-
-            <div id="next">
-                <h2>What's next?</h2>
-                <p>
-                    <svg id="icon-book" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-12.5 9 64 64" enable-background="new -12.5 9 64 64" xml:space="preserve">
-                        <path fill="#AAA" d="M6.8,40.8c2.4,0.8,4.5-0.7,4.9-2.5c0.2-1.2-0.3-2.1-1.3-3.2l-0.8-0.8c-0.4-0.5-0.6-1.3-0.2-1.9
-                            c0.4-0.5,0.9-0.8,1.8-0.5c1.3,0.4,1.9,1.3,2.9,2.2c-0.4,1.4-0.7,2.9-0.9,4.2l-0.2,1c-0.7,4-1.3,6.2-2.7,7.5
-                            c-0.3,0.3-0.7,0.5-1.3,0.6c-0.3,0-0.4-0.3-0.4-0.3c0-0.3,0.2-0.3,0.3-0.4c0.2-0.1,0.5-0.3,0.4-0.8c0-0.7-0.6-1.3-1.3-1.3
-                            c-0.6,0-1.4,0.6-1.4,1.7s1,1.9,2.4,1.8c0.8,0,2.5-0.3,4.2-2.5c2-2.5,2.5-5.4,2.9-7.4l0.5-2.8c0.3,0,0.5,0.1,0.8,0.1
-                            c2.4,0.1,3.7-1.3,3.7-2.3c0-0.6-0.3-1.2-0.9-1.2c-0.4,0-0.8,0.3-1,0.8c-0.1,0.6,0.8,1.1,0.1,1.5c-0.5,0.3-1.4,0.6-2.7,0.4l0.3-1.3
-                            c0.5-2.6,1-5.7,3.2-5.8c0.2,0,0.8,0,0.8,0.4c0,0.2,0,0.2-0.2,0.5c-0.2,0.3-0.3,0.4-0.2,0.7c0,0.7,0.5,1.1,1.2,1.1
-                            c0.9,0,1.2-1,1.2-1.4c0-1.2-1.2-1.8-2.6-1.8c-1.5,0.1-2.8,0.9-3.7,2.1c-1.1,1.3-1.8,2.9-2.3,4.5c-0.9-0.8-1.6-1.8-3.1-2.3
-                            c-1.1-0.7-2.3-0.5-3.4,0.3c-0.5,0.4-0.8,1-1,1.6c-0.4,1.5,0.4,2.9,0.8,3.4l0.9,1c0.2,0.2,0.6,0.8,0.4,1.5c-0.3,0.8-1.2,1.3-2.1,1
-                            c-0.4-0.2-1-0.5-0.9-0.9c0.1-0.2,0.2-0.3,0.3-0.5s0.1-0.3,0.1-0.3c0.2-0.6-0.1-1.4-0.7-1.6c-0.6-0.2-1.2,0-1.3,0.8
-                            C4.3,38.4,4.7,40,6.8,40.8z M46.1,20.9c0-4.2-3.2-7.5-7.1-7.5h-3.8C34.8,10.8,32.7,9,30.2,9L-2.3,9.1c-2.8,0.1-4.9,2.4-4.9,5.4
-                            L-7,58.6c0,4.8,8.1,13.9,11.6,14.1l34.7-0.1c3.9,0,7-3.4,7-7.6L46.1,20.9z M-0.3,36.4c0-8.6,6.5-15.6,14.5-15.6
-                            c8,0,14.5,7,14.5,15.6S22.1,52,14.2,52C6.1,52-0.3,45-0.3,36.4z M42.1,65.1c0,1.8-1.5,3.1-3.1,3.1H4.6c-0.7,0-3-1.8-4.5-4.4h30.4
-                            c2.8,0,5-2.4,5-5.4V17.9h3.7c1.6,0,2.9,1.4,2.9,3.1V65.1L42.1,65.1z"/>
-                    </svg>
-
-                    Read the documentation to learn
-                    <a href="http://symfony.com/doc/{{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION')[:3] }}/book/page_creation.html">
-                        How to create your first page in Symfony
-                    </a>
-                </p>
+            <div>
+                <img u="image" src2="{{ asset('bundles/reception/images/repas2.jpg') }}" />
             </div>
+            <div>
+                <img u="image" src2="{{ asset('bundles/reception/images/repas3.jpg') }}" />
+            </div>
+        </div>
+        <!-- bullet navigator container -->
+        <div u="navigator" class="jssorb21" style="bottom: 26px; right: 6px;">
+            <!-- bullet navigator item prototype -->
+            <div u="prototype"></div>
+        </div>
+        <!--#endregion Bullet Navigator Skin End -->
+        <!-- Arrow Left -->
+            <span u="arrowleft" class="jssora21l" style="top: 123px; left: 8px;">
+            </span>
+        <!-- Arrow Right -->
+            <span u="arrowright" class="jssora21r" style="top: 123px; right: 8px;">
+            </span>
+        <!--#endregion Arrow Navigator Skin End -->
+        <a style="display: none" href="http://www.jssor.com">Bootstrap Carousel</a>
+    </div>
+    <!-- Jssor Slider End -->
+    </div>
 
+    <!-- Fin Slider -->
+
+
+    <!-- Introduction -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-offset-2 col-lg-8">
+                <div class="text_welcome">
+                    <h2>La cuisine de Caro</h2>
+                    <img id="caro" src="{{ asset('bundles/reception/images/caro.png') }}" />
+                    <p>
+                        Venez comme vous êtes !
+                    </p>
+                    <p>
+                        Les envies culinaires d'une enseignante gourmande qui aime cuisiner et faire plaisir... En toute simplicité, mon quotidien dans ma cuisine.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-{% endblock %}
 
-{% block stylesheets %}
-<style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
+    <!-- Fin Introduction -->
 
-    @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
 
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
-    }
-</style>
+    <!-- Menus -->
+
+    <div class="container" id="products">
+        <div class="row">
+            <div class="col-lg-12" id="">
+                <h2>Au Menu</h2>
+                <ul class="grid effect-6" id="grid">
+                    <li><a class="hvr-box-shadow-outset" data-toggle="modal" data-target="#myModal"><img src="{{ asset('bundles/reception/images/r1.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r2.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r3.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r4.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r5.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r6.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r7.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r8.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r9.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r10.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r11.jpg') }}" /></a></li>
+                    <li><a href="#"><img src="{{ asset('bundles/reception/images/r12.jpg') }}" /></a></li>
+                </ul>
+
+                <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">Boite de Comm' du Couple !</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <!-- TEXT INTERIEUR + LIEN REFERENCE + ICONE AMAZON -->
+                                <img src="img/girafe1.jpg" alt="" width="50%" height="50%">
+                                <p>
+                                    Retrouvez notre produit sur : <br/>
+                                    Retrouvez-vous en tête-à-tête autour d’un verre et tirez une carte.<br/>
+                                    Le principe est simple : un défi à relever le temps d’un sablier avec des gages et des récompenses à la clef, des questions sur une multitude de sujets aussi légers que profonds et un temps de discussion autour de vos réponses.<br/>
+                                    Cette boîte contient : 52 cartes doubles, 2 crayons, 1 dé original, 1 sablier et 1 règle du jeu.<br/>
+                                    Fous rire et surtout (re)découverte de l’autre et de soi en perspective.<br/>
+                                    Réalisée par un groupe de coachs, de psychologues et de conseillers conjugaux.<br/>
+                                    Cible : tous les couples : récemment créés, tout juste mariés, ensemble depuis des années, des décennies, avec enfants ou non. Se joue uniquement à 2, au sein de son couple.<br/>
+                                    Temps de partie : 15 min par carte environ.<br/>
+                                    Taille :  180 mm x 200 mm x 45 mn.<br/>
+                                    Poids : 950 g.<br/>
+                                </p>
+                                <a href="http://www.amazon.fr/La-boite-comm-ducouple/dp/B00NUALNVC/ref=cm_cr_pr_product_top?ie=UTF8">
+                                    Lien
+                                </a>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Fin Menus -->
+
+
 {% endblock %}

@@ -5,6 +5,10 @@ home:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
+homepage:
+    path:     /
+    defaults: { _controller: ReceptionBundle:Default:index }
+
 #user:
     #resource: "@UserBundle/Resources/config/routing.yml"
     #prefix:   /
