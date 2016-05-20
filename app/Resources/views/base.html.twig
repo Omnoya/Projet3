@@ -76,10 +76,10 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="#" class="hvr-underline-from-left">Accueil <span class="sr-only">(current)</span></a></li>
+                                <li class="active"><a href="{{ path('soiree_index') }}" class="hvr-underline-from-left">Accueil <span class="sr-only">(current)</span></a></li>
                                 <li><a href="#" class="hvr-underline-from-left">Plats</a></li>
-                                <li><a href="#" class="hvr-underline-from-left">S'enregistrer</a></li>
-                                <li><a href="#" class="hvr-underline-from-left">Se connecter</a></li>
+                                <li><a href="{{ path("fos_user_registration_register") }}" class="hvr-underline-from-left">S'enregistrer</a></li>
+                                <li><a href="{{ path("fos_user_security_login") }}" class="hvr-underline-from-left">Se connecter</a></li>
                             </ul>
                         </div>
                     </nav>
