@@ -1,25 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container">
-    <h1 class="menus">Liste des menus</h1>
-
-<div class="navbar">
-    <ul>
-        <a href="{{ path("fos_user_registration_register") }}">S'inscrire</a></li>
-    </ul>
+<div class="navigation">
+        <a href="{{ path("fos_user_registration_register") }}">S'enregistrer</a>&nbsp;<a href="{{ path("fos_user_security_login") }}">Se connecter</a>
 </div>
-
-<div class="navbar">
-    <ul>
-        <a href="{{ path("fos_user_security_login") }}">Se connecter</a></li>
-    </ul>
-</div>
-
 
     <h1 class="titre">La Cuisine de Caro</h1>
-    <img id="imagecaro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}"/>
+    <img class="caro" src="{{ asset('../web/bundles/reception/images/PROJET3.png') }}"/>
     <h1 class="list">Liste des Menus :</h1>
+
 
 
     <table>
@@ -44,11 +33,9 @@
                 <td>{% if soiree.dateInvitation %}{{ soiree.dateInvitation|date('d-m-Y H:i:s') }}{% endif %}</td>
                 <td>
                     {% if is_granted('ROLE_SUPER_ADMIN') %}
-                    <ul>
-                        <li>
+
                             <a href="{{ path('soiree_edit', { 'id': soiree.id }) }}">Modifier</a>
-                        </li>
-                    </ul>
+
                     {% endif %}
                     {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
                         tu n'editeras pas mes menus
@@ -62,13 +49,14 @@
 
 {% if is_granted('ROLE_SUPER_ADMIN') %}
 
-    <ul>
+    <div>
         <form>
             <a href="{{ path('soiree_new') }}">
             <input id="button" type="button" value="Ajouter un nouveau plat">
 
             </a>
         </form>
-    </ul>
+    </div>
+<div class="footer">La Cuisine de Caro </div>
 {% endif %}
 {% endblock %}
