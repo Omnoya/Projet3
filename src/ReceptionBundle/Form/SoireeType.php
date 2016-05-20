@@ -19,6 +19,7 @@ class SoireeType extends AbstractType
             ->add('descriptif')
             ->add('photo')
             ->add('dateInvitation', 'datetime')
+            ->add('soiree')
         ;
     }
     

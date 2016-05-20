@@ -14,6 +14,7 @@
                 <th>Nom</th>
                 <th>Descriptif</th>
                 <th>Photo</th>
+                <th>Participant</th>
                 <th>Date Invitation</th>
                 <th>Actions</th>
             </tr>
@@ -24,6 +25,12 @@
                 <td><a href="{{ path('soiree_show', { 'id': soiree.id }) }}">{{ soiree.nom }}</a></td>
                 <td>{{ soiree.descriptif }}</td>
                 <td><img src="{{ soiree.photo }}" /></td>
+                <td>
+                    {% for participant in soiree.soiree %}
+                        {{ participant }}
+                    {% endfor %}
+
+                </td>
                 <td>{% if soiree.dateInvitation %}{{ soiree.dateInvitation|date('d-m-Y H:i:s') }}{% endif %}</td>
 
                 <td>{% if is_granted('ROLE_SUPER_ADMIN') %}<a href="{{ path('soiree_edit', { 'id': soiree.id }) }}">Modifier</a>{% endif %}</td>
